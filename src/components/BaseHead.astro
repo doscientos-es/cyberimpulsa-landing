@@ -6,20 +6,19 @@ import { getMetadata } from "../shared/lib/constants";
 import "../styles/global.css";
 
 interface Props {
-	title?: string;
-	description?: string;
-	image?: string;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const metadata = getMetadata();
 
 const {
-	title = metadata.title,
-	description = metadata.description,
-	image = "/assets/media/branding/og-image.png",
+  title = metadata.title,
+  description = metadata.description,
+  image = "/assets/media/branding/og-image.png",
 } = Astro.props;
-
 ---
 
 <!-- Global Metadata -->
@@ -34,8 +33,8 @@ const {
 <meta name="apple-mobile-web-app-title" content="Cyberimpulsa" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta
-	name="apple-mobile-web-app-status-bar-style"
-	content="black-translucent"
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
 />
 <link rel="manifest" href="/site.webmanifest" />
 
@@ -46,7 +45,10 @@ const {
 <meta name="msapplication-TileColor" content="#000000" />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-<meta name="generator" content={Astro.generator} />
+<meta
+  name="generator"
+  content={`${Astro.generator} - Built by Doscientos (https://doscientos.es)`}
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

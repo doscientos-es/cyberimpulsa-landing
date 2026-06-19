@@ -173,8 +173,21 @@ const socialLinks = [
       </div>
 
       <!-- Bottom bar -->
-      <div class="mt-16 pt-8 border-t border-white/10 text-center">
+      <div
+        class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-center"
+      >
         <p class="text-sm text-neutral-500">{copy.footer.copyright}</p>
+        <p class="text-sm text-neutral-600">
+          Diseñado y desarrollado por{" "}
+          <a
+            href="https://doscientos.es"
+            target="_blank"
+            rel="noopener"
+            class="text-neutral-400 hover:text-white transition-colors underline underline-offset-2"
+          >
+            Doscientos
+          </a>
+        </p>
       </div>
     </div>
   </footer>
