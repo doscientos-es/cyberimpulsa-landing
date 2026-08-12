@@ -83,6 +83,16 @@ const renderedCases = await Promise.all(
               <div>
                 <p class="font-bold text-foreground text-2xl">{data.client}</p>
                 <p class="text-primary text-sm font-medium mt-1">{data.type}</p>
+                {data.website && (
+                  <a
+                    href={data.website}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex mt-3 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Visitar {data.client} →
+                  </a>
+                )}
               </div>
               <div class="text-muted-foreground leading-relaxed prose prose-sm max-w-none">
                 <Content />

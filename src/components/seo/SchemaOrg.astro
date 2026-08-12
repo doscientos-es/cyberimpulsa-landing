@@ -30,6 +30,14 @@ const { type = "organization", article, service, project } = Astro.props;
 
 const baseUrl = Astro.site?.toString() || "https://cyberimpulsa.com";
 
+const doscientosOrganization = {
+  "@type": "Organization",
+  name: "Doscientos",
+  url: "https://doscientos.es",
+  description:
+    "Estudio de software especializado en sistemas internos, MVPs y automatización de procesos para empresas.",
+};
+
 // Organization + LocalBusiness Schema (siempre presente)
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -80,11 +88,8 @@ const websiteSchema = {
       url: `${baseUrl}/og-image.png`,
     },
   },
-  creator: {
-    "@type": "Organization",
-    name: "Doscientos",
-    url: "https://doscientos.es",
-  },
+  creator: doscientosOrganization,
+  mentions: doscientosOrganization,
 };
 
 // Article Schema (para blog posts)

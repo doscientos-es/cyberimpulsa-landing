@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { branding } from "~/config/branding";
 import { getClients } from "~/shared/lib/collections";
 import SectionHeader from "../ui/SectionHeader.astro";
 
@@ -22,8 +21,15 @@ const clients = await getClients();
     {
       clients.map((client, i) => (
         <a
-          href="/clientes"
+          href={client.data.website || "/clientes"}
+          target={client.data.website ? "_blank" : undefined}
+          rel={client.data.website ? "noopener" : undefined}
           class="group relative bg-accent rounded-3xl shadow-pastel flex flex-col cursor-pointer overflow-hidden"
+          aria-label={
+            client.data.website
+              ? `Visitar ${client.data.client}`
+              : `Ver caso de éxito de ${client.data.client}`
+          }
           data-reveal="bottom"
           data-speed="normal"
           data-easing="soft"
