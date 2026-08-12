@@ -21,12 +21,12 @@ const pathname = Astro.url.pathname;
 
 <header
   data-reveal="top"
-  class="fixed w-[calc(100vw-2rem)] max-w-[90vw] lg:w-fit rounded-full top-6 left-1/2 -translate-x-1/2 z-50 bg-accent/90 backdrop-blur-md shadow-pastel-sm flex items-center justify-between p-2 gap-2 lg:gap-6"
+  class="fixed w-[calc(100vw-2rem)] max-w-[90vw] lg:w-fit rounded-full top-6 left-1/2 -translate-x-1/2 z-50 bg-accent/90 backdrop-blur-md shadow-pastel-sm flex items-center justify-between p-2 gap-2 lg:gap-3 xl:gap-6"
 >
   <!-- Logo -->
   <a
     href="/"
-    class="flex cursor-pointer items-center gap-2 hover:opacity-80 transition-opacity px-2"
+    class="flex shrink-0 cursor-pointer items-center gap-2 hover:opacity-80 transition-opacity px-2"
   >
     <Image
       src={isoLogo}
@@ -40,7 +40,7 @@ const pathname = Astro.url.pathname;
   </a>
 
   <!-- Desktop Navigation -->
-  <nav class="hidden lg:flex items-center">
+  <nav class="hidden lg:flex shrink-0 items-center">
     {
       desktopNavItems.map((item) => {
         const isActive =
@@ -49,7 +49,7 @@ const pathname = Astro.url.pathname;
         return (
           <a
             href={item.href}
-            class={`py-2 px-4 text-sm font-medium transition-colors ${isActive ? "text-foreground underline" : "text-muted-foreground hover:underline"}`}
+            class={`shrink-0 whitespace-nowrap py-2 px-3 xl:px-4 text-sm font-medium transition-colors ${isActive ? "text-foreground underline" : "text-muted-foreground hover:underline"}`}
           >
             {item.label}
           </a>
@@ -82,13 +82,15 @@ const pathname = Astro.url.pathname;
   </button>
 
   <!-- Actions -->
-  <div class="hidden lg:flex items-center gap-4">
+  <div class="hidden lg:flex shrink-0 items-center gap-4">
     <a
       href={branding.contact.calendlyUrl}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button size="sm" withArrow>Agenda llamada</Button>
+      <Button size="sm" withArrow class="whitespace-nowrap"
+        >Agenda llamada</Button
+      >
     </a>
   </div>
 </header>
