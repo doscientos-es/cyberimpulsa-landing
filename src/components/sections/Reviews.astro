@@ -1,0 +1,66 @@
+---
+import { branding } from "~/config/branding";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const reviews = [
+  {
+    name: "Sergi Majó Álvarez",
+    text: "Desde que empezamos campañas con ellos, hemos superado los objetivos marcados cada mes. Además muy profesionales y cercanos.",
+  },
+  {
+    name: "Pol Gubau Amores",
+    text: "Gente muy profesional, hemos contado con Rafa para gestionar unas campañas de Meta Ads y los resultados han sido muy positivos. ¡Recomendado!",
+  },
+  {
+    name: "Visualtis Tecnología",
+    text: "Llevábamos tiempo probando diferentes proveedores para captación de leads. Cyberimpulsa nos convenció para probar un canal diferente. Ahora estamos encantados con su trabajo y profesionalidad.",
+  },
+];
+---
+
+<section class="landing-section">
+  <SectionHeader
+    title="Lo que dicen"
+    subtitle="nuestros clientes"
+    align="center"
+    tag="Opiniones"
+  />
+
+  <!-- Rating resumen -->
+  <a
+    href={branding.social.googleBusiness}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center gap-2 -mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
+  >
+    <span class="text-primary text-lg tracking-tight" aria-hidden="true"
+      >★★★★★</span
+    >
+    <span>5,0 · 6 reseñas en Google</span>
+  </a>
+
+  <!-- Grid de reseñas -->
+  <div
+    data-stagger="150"
+    class="gap-4 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] w-full"
+  >
+    {
+      reviews.map((review) => (
+        <figure
+          class="p-8 rounded-3xl bg-accent shadow-pastel flex flex-col gap-4 h-full"
+          data-reveal="scale"
+          data-speed="normal"
+          data-easing="bounce"
+        >
+          <div class="text-primary text-lg tracking-tight" aria-hidden="true">
+            ★★★★★
+          </div>
+          <blockquote class="text-muted-foreground text-pretty leading-relaxed">
+            “{review.text}”
+          </blockquote>
+          <figcaption class="mt-auto font-semibold">{review.name}</figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</section>
