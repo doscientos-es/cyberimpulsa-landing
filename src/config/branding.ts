@@ -1,6 +1,6 @@
 export const branding = {
 	// Información de marca
-	name: "CyberImpulsa",
+	name: "Cyberimpulsa",
 	slogan: "Agencia de marketing B2B para empresas de desarrollo de software y agencias de IA",
 	legalName: "Cyberimpulsa LLC",
 	domain: "cyberimpulsa.com",
