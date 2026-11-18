@@ -4,9 +4,9 @@ export const baseUrl = branding.url;
 
 export function getMetadata() {
 	return {
-		title: `${branding.name} | Captación B2B para Cyberseguridad, Software e IA`,
+		title: `${branding.name} | Agencia de Marketing B2B para Software e IA`,
 
-		description: `${branding.name} ayuda a crecer empresas de Cyberseguridad, Desarrollo de software/app e Inteligencia Artificial. Sistema de captación B2B con resultados en los primeros 2 meses.`,
+		description: `${branding.name} es una agencia de marketing especializada en captación de clientes B2B para empresas de desarrollo de software y agencias de IA. Resultados en los primeros 2 meses.`,
 
 		name: branding.name,
 
@@ -31,7 +31,7 @@ export function getMetadata() {
 
 			"Captación de Clientes",
 
-			"Cyberseguridad Marketing",
+			"Marketing para Agencias de IA",
 
 			"Software Marketing",
 

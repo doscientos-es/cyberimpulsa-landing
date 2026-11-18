@@ -1,7 +1,7 @@
 export const branding = {
 	// Información de marca
-	name: "Cyberimpulsa",
-	slogan: "Captación B2B para empresas de Cyberseguridad, Software e IA",
+	name: "CyberImpulsa",
+	slogan: "Agencia de marketing B2B para empresas de desarrollo de software y agencias de IA",
 	legalName: "Cyberimpulsa LLC",
 	domain: "cyberimpulsa.com",
 	url: "https://cyberimpulsa.com",
@@ -20,6 +20,8 @@ export const branding = {
 	social: {
 		linkedin: "https://www.linkedin.com/company/cyberimpulsa",
 		instagram: "https://instagram.com/cyberimpulsa",
+		facebook: "https://facebook.com/profile.php?id=61583000255903",
+		googleBusiness: "https://maps.app.goo.gl/ogsLd5LiiuMMSBcL6",
 	},
 
 	// Ubicación

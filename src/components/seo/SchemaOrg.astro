@@ -28,7 +28,7 @@ interface Props {
 
 const { type = "organization", article, service, project } = Astro.props;
 
-const baseUrl = Astro.site?.toString() || "https://cyberimpulsa.com";
+const baseUrl = (Astro.site?.toString() || "https://cyberimpulsa.com").replace(/\/$/, "");
 
 const doscientosOrganization = {
   "@type": "Organization",
@@ -65,12 +65,41 @@ const organizationSchema = {
   },
   priceRange: "€€€",
   openingHours: "Mo-Fr 09:00-18:00",
-  sameAs: [branding.social.linkedin, branding.social.twitter],
+  sameAs: [
+    branding.social.linkedin,
+    branding.social.instagram,
+    branding.social.facebook,
+    branding.social.googleBusiness,
+  ],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5",
-    reviewCount: "12",
+    reviewCount: "6",
+    bestRating: "5",
   },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Sergi Majó Alvarez" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Desde que empezamos campañas con ellos, hemos superado los objetivos marcados cada mes. Además muy profesionales y cercanos.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Pol Gubau Amores" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Gente muy profesional, hemos contado con Rafa para gestionar unas campañas de Meta ads y los resultados han sido muy positivos. ¡Recomendado!",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Organization", name: "Visualtis Tecnología" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Llevábamos tiempo probando diferentes proveedores para captación de leads. CyberImpulsa nos convenció para probar un canal diferente. Ahora estamos encantados con su trabajo y profesionalidad.",
+    },
+  ],
 };
 
 // Website Schema
